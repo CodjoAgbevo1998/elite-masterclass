@@ -1,0 +1,41 @@
+# render.yaml
+services:
+  - type: web
+    name: elitemasterclass
+    env: node
+    plan: free
+    region: oregon
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: MONGODB_URI
+        value: mongodb+srv://Aris:CodjoAgbevo1998@cluster0.vtdatdv.mongodb.net/elitemasterclass?retryWrites=true&w=majority&appName=Cluster0
+      - key: JWT_SECRET
+        value: elitemasterclass_2025_prod_secret_@r1st1d3_C0dj0_$3cur3
+      - key: EMAIL_SERVICE
+        value: gmail
+      - key: EMAIL_USER
+        value: aristidecoagbevo@gmail.com
+      - key: EMAIL_PASSWORD
+        value: wegrzlljzmwwzkjd
+      - key: EMAIL_FROM
+        value: EliteMasterClass <aristidecoagbevo@gmail.com>
+      - key: TELEGRAM_LINK
+        value: https://t.me/elitemasterclass
+      - key: ADMIN_EMAIL
+        value: aristidecoagbevo@gmail.com
+      - key: ADMIN_PASSWORD
+        value: admin123
+
+# Configuration pour les déploiements automatiques
+gitHub:
+  repo: votre-username/EliteMasterClass
+  branch: main
+  autoDeploy: true
+
+# Health check path (optionnel)
+healthCheckPath: /api/health

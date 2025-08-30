@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EliteMasterclass 2025 - Business en Ligne | Débloquez Votre Potentiel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#000000',
+                        accent: '#4B5563',
+                        background: '#FFFFFF',
+                        text: '#1F2937',
+                        secondary: '#E5E7EB'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50%;
+            height: 3px;
+            background-color: #000;
+        }
+
+        .countdown-box {
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            padding: 12px;
+            min-width: 70px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .countdown-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefit-card {
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            border-bottom: 3px solid #000;
+        }
+
+        .testimonial-card {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #E5E7EB;
+            transition: all 0.3s ease;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .faq-active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Animation pour attirer l'attention sur le CTA */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.02);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+
+        /* Amélioration de la réactivité */
+        @media (max-width: 768px) {
+            .section-title:after {
+                width: 100%;
+                left: 0;
+            }
+
+            .countdown-box {
+                min-width: 60px;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-background text-text">
+    <!-- Navigation -->
+    <nav class="sticky-nav bg-white bg-opacity-95 border-b border-secondary py-4 shadow-sm">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <span class="text-2xl font-bold text-primary">EliteMasterclass</span>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="text-accent hover:text-primary font-medium transition-colors">À propos</a>
+                <a href="#program" class="text-accent hover:text-primary font-medium transition-colors">Programme</a>
+                <a href="#instructor" class="text-accent hover:text-primary font-medium transition-colors">Formateur</a>
+                <a href="#testimonials"
+                    class="text-accent hover:text-primary font-medium transition-colors">Témoignages</a>
+            </div>
+            <div>
+                <a href="#register"
+                    class="bg-primary text-white px-5 py-2 rounded-md font-medium hover:bg-accent transition-colors pulse-animation">Réserver
+                    maintenant</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-16 md:py-24 bg-gradient-to-br from-background to-secondary">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="inline-block px-4 py-1 bg-black bg-opacity-5 rounded-full text-sm font-medium mb-6">
+                    <span class="text-primary">MASTERCLASS EXCLUSIVE - ÉDITION SEPTEMBRE 2025</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6">Devenez Libre Financièrement
+                    avec Votre Business en Ligne</h1>
+                <p class="text-xl text-accent mb-10">Rejoignez les 3% d'entrepreneurs qui génèrent plus de 10 000 000 CFA/mois
+                    avec leur business digital</p>
+
+                <div
+                    class="bg-white p-6 rounded-lg shadow-lg mb-10 transform transition-all duration-300 hover:shadow-xl">
+                    <div class="flex flex-wrap justify-center gap-4 mb-6">
+                        <div class="countdown-box">
+                            <span class="block text-2xl font-bold text-primary" id="days">00</span>
+                            <span class="text-sm text-accent">Jours</span>
+                        </div>
+                        <div class="countdown-box">
+                            <span class="block text-2xl font-bold text-primary" id="hours">00</span>
+                            <span class="text-sm text-accent">Heures</span>
+                        </div>
+                        <div class="countdown-box">
+                            <span class="block text-2xl font-bold text-primary" id="minutes">00</span>
+                            <span class="text-sm text-accent">Minutes</span>
+                        </div>
+                        <div class="countdown-box">
+                            <span class="block text-2xl font-bold text-primary" id="seconds">00</span>
+                            <span class="text-sm text-accent">Secondes</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-accent mb-4">La masterclass commence le <span
+                            class="font-semibold text-primary">15 septembre 2025 à 19h00</span></p>
+
+                    <form class="space-y-4" id="hero-form">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <input type="text" placeholder="Votre prénom"
+                                class="form-input w-full px-4 py-3 border border-secondary rounded-md focus:border-primary transition-colors"
+                                required>
+                            <input type="email" placeholder="Votre email"
+                                class="form-input w-full px-4 py-3 border border-secondary rounded-md focus:border-primary transition-colors"
+                                required>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-primary text-white py-3 px-4 rounded-md font-semibold hover:bg-accent transition-colors pulse-animation">
+                            Réserver ma place gratuitement <i class="ml-2 fas fa-arrow-right"></i>
+                        </button>
+                        <p class="text-xs text-accent">Nous respectons votre vie privée. Désinscription à tout moment.
+                        </p>
+                    </form>
+                </div>
+
+                <div class="flex items-center justify-center space-x-2 text-accent">
+                    <i class="fas fa-shield-alt"></i>
+                    <span class="text-sm">100% sécurisé • Aucun spam</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4 section-title">Ce Que Vous Allez Découvrir</h2>
+            <p class="text-lg text-accent text-center max-w-2xl mx-auto mb-12">Notre masterclass vous donne les
+                stratégies exactes pour construire un business en ligne rentable, même si vous partez de zéro.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="benefit-card bg-background p-6 rounded-lg border border-secondary">
+                    <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-chart-line text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary mb-2">Monétisation Rapide</h3>
+                    <p class="text-accent">Découvrez les 5 méthodes les plus profitables pour générer des revenus en
+                        ligne dès le premier mois.</p>
+                </div>
+
+                <div class="benefit-card bg-background p-6 rounded-lg border border-secondary">
+                    <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-users text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary mb-2">Acquisition de Clients</h3>
+                    <p class="text-accent">La méthode éprouvée pour attirer des clients idéaux sans budget publicitaire
+                        important.</p>
+                </div>
+
+                <div class="benefit-card bg-background p-6 rounded-lg border border-secondary">
+                    <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-cogs text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary mb-2">Automatisation</h3>
+                    <p class="text-accent">Systématisez votre business pour travailler moins tout en gagnant plus.</p>
+                </div>
+
+                <div class="benefit-card bg-background p-6 rounded-lg border border-secondary">
+                    <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-bolt text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary mb-2">Stratégies IA 2025</h3>
+                    <p class="text-accent">Utilisez l'intelligence artificielle pour automatiser et scaler votre
+                        business comme jamais auparavant.</p>
+                </div>
+
+                <div class="benefit-card bg-background p-6 rounded-lg border border-secondary">
+                    <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-lock text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary mb-2">Avantage Concurrentiel</h3>
+                    <p class="text-accent">Des stratégies peu connues qui vous donnent un avantage sur 97% des
+                        concurrents.</p>
+                </div>
+
+                <div class="benefit-card bg-background p-6 rounded-lg border border-secondary">
+                    <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-hand-holding-usd text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary mb-2">Investissement Minimal</h3>
+                    <p class="text-accent">Commencez avec moins de 10 000 CFA et scalez à 6 chiffres sans investisseurs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-secondary">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                        alt="Business en ligne"
+                        class="rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold mb-6 section-title">Pourquoi Cette Masterclass Est Différente</h2>
+                    <p class="text-lg text-accent mb-6">Pendant des années, j'ai testé des dizaines de méthodes pour
+                        créer un business en ligne rentable. J'ai tout essayé : dropshipping, affiliation, création de
+                        formation, coaching...</p>
+                    <p class="text-lg text-accent mb-6">Après avoir perdu du temps et de l'argent, j'ai finalement
+                        découvert ce qui fonctionne VRAIMENT. Pas la théorie, mais la pratique.</p>
+                    <p class="text-lg text-accent mb-6">Dans cette masterclass, je vous donne accès à toutes ces
+                        stratégies éprouvées, sans filtre et sans langue de bois.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span class="text-accent">Des stratégies qui marchent en 2025, pas des techniques
+                                dépassées</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span class="text-accent">Des résultats rapides : premières ventes en moins de 30
+                                jours</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span class="text-accent">Un plan par étapes, même si vous partez de zéro</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Section -->
+    <section id="program" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4 section-title">Le Programme de la Masterclass</h2>
+            <p class="text-lg text-accent text-center max-w-2xl mx-auto mb-12">2 heures intensives pour transformer
+                votre vision en business rentable</p>
+
+            <div class="max-w-3xl mx-auto">
+                <div class="flex flex-col md:flex-row gap-8 mb-12">
+                    <div class="md:w-1/2">
+                        <div
+                            class="p-6 bg-background rounded-lg border border-secondary h-full transform transition duration-300 hover:shadow-md">
+                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4">
+                                <span class="text-white font-bold">1</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-primary mb-2">Les Fondations</h3>
+                            <ul class="space-y-2 text-accent">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                                    <span>Choisir votre niche rentable (même sans expertise)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                                    <span>Analyser la concurrence et trouver votre avantage unique</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                                    <span>Structurer votre offre pour maximiser les conversions</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <div
+                            class="p-6 bg-background rounded-lg border border-secondary h-full transform transition duration-300 hover:shadow-md">
+                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4">
+                                <span class="text-white font-bold">2</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-primary mb-2">Acquisition Clients</h3>
+                            <ul class="space-y-2 text-accent">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                                    <span>Le funnel gratuit qui attire 15-20 leads par jour</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                                    <span>Content marketing qui positionne comme expert</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                                    <span>Publicités low-cost avec ROI 5x minimum</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/2">
+                        <div
+                            class="p-6 bg-background rounded-lg border border-secondary h-full transform transition duration-300 hover:shadow-md">
+                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4">
+                                <span class="text-white font-bold">3</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-primary mb-2">Monétisation</h3>
+                            <ul class="space-y-2 text-accent">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                                    <span>5 modèles de revenus testés et approuvés</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                                    <span>Augmenter sa valeur perçue pour justifier des prix premium</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                                    <span>Techniques de pricing qui multiplient les ventes par 3</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <div
+                            class="p-6 bg-background rounded-lg border border-secondary h-full transform transition duration-300 hover:shadow-md">
+                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4">
+                                <span class="text-white font-bold">4</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-primary mb-2">Automatisation IA</h3>
+                            <ul class="space-y-2 text-accent">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                                    <span>Utiliser l'IA pour créer du contenu 10x plus rapidement</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                                    <span>Automatiser le service client avec des chatbots IA</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                                    <span>Systèmes qui fonctionnent 24h/24 pour vous</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructor Section -->
+    <section id="instructor" class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-2/5">
+                    <img src="img/ari.jpg"
+                        alt="Votre formateur"
+                        class="rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+                </div>
+                <div class="md:w-3/5">
+                    <h2 class="text-3xl font-bold mb-6 section-title">Qui Suis-Je Pour Vous Former ?</h2>
+                    <p class="text-lg mb-6">Je m'appelle Aristide AGBEVO et j'ai construit 7 businesses en ligne qui
+                        génèrent aujourd'hui plus de 5 0000 000CFA par mois.</p>
+                    <p class="text-lg mb-6">Mais ça n'a pas toujours été le cas. J'ai commencé comme commercial dans une
+                        entreprise Immobiliere Traditionnelle, avec un salaire fixe et des perspectives limitées.</p>
+                    <p class="text-lg mb-6">Ma vie a changé quand j'ai découvert les stratégies que je vais vous
+                        partager pendant cette masterclass. En 18 mois, j'ai multiplié mes revenus par 12 et j'ai quitté
+                        mon emploi.</p>
+                    <p class="text-lg mb-8">Aujourd'hui, j'accompagne plus de 100 entrepreneurs à développer leur
+                        business en ligne avec des méthodes concrètes et applicables immédiatement.</p>
+
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold mb-1">7</div>
+                            <div class="text-sm opacity-80">Businesses en ligne</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold mb-1">10 000 000CFA</div>
+                            <div class="text-sm opacity-80">Chiffre d'affaires/mois</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold mb-1">100+</div>
+                            <div class="text-sm opacity-80">Entrepreneurs accompagnés</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold mb-1">96%</div>
+                            <div class="text-sm opacity-80">De satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-background">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4 section-title">Ils Ont Transformé Leur Business</h2>
+            <p class="text-lg text-accent text-center max-w-2xl mx-auto mb-12">Ils ont appliqué les méthodes enseignées
+                dans cette masterclass</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="testimonial-card bg-white p-6 rounded-lg border border-secondary">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-primary"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-primary"> Bignon T.</h4>
+                            <p class="text-sm text-accent">Coaching bien-être</p>
+                        </div>
+                    </div>
+                    <p class="text-accent mb-4">"J'ai doublé mon chiffre d'affaires en 3 mois seulement. Les techniques
+                        d'acquisition clients sont tout simplement géniales."</p>
+                    <div class="flex">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+
+                <div class="testimonial-card bg-white p-6 rounded-lg border border-secondary">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-primary"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-primary">Bertrand S.</h4>
+                            <p class="text-sm text-accent">Formation en ligne</p>
+                        </div>
+                    </div>
+                    <p class="text-accent mb-4">"De 0 à 1 500 000CFA/mois en 5 mois. Je n'aurais jamais cru que c'était
+                        possible sans investissement initial important."</p>
+                    <div class="flex">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+
+                <div class="testimonial-card bg-white p-6 rounded-lg border border-secondary">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-primary"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-primary">Sophie M.</h4>
+                            <p class="text-sm text-accent">E-commerce</p>
+                        </div>
+                    </div>
+                    <p class="text-accent mb-4">"J'ai enfin trouvé un business qui me passionne et me permet de vivre
+                        confortablement. Merci pour ces stratégies!"</p>
+                    <div class="flex">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section id="register" class="py-16 bg-secondary">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-6">Rejoignez La Masterclass Elite Business En Ligne</h2>
+                <p class="text-lg text-accent mb-8">Ne ratez pas cette opportunité de transformer votre vision en
+                    réalité. Les places sont limitées pour garantir la qualité des échanges.</p>
+
+                <div class="bg-white p-8 rounded-lg shadow-lg transform transition-all duration-300 hover:shadow-xl">
+                    <div class="flex flex-wrap justify-center gap-4 mb-6">
+                        <div class="countdown-box">
+                            <span class="block text-2xl font-bold text-primary" id="cta-days">00</span>
+                            <span class="text-sm text-accent">Jours</span>
+                        </div>
+                        <div class="countdown-box">
+                            <span class="block text-2xl font-bold text-primary" id="cta-hours">00</span>
+                            <span class="text-sm text-accent">Heures</span>
+                        </div>
+                        <div class="countdown-box">
+                            <span class="block text-2xl font-bold text-primary" id="cta-minutes">00</span>
+                            <span class="text-sm text-accent">Minutes</span>
+                        </div>
+                        <div class="countdown-box">
+                            <span class="block text-2xl font-bold text-primary" id="cta-seconds">00</span>
+                            <span class="text-sm text-accent">Secondes</span>
+                        </div>
+                    </div>
+
+                    <form class="space-y-4 text-left">
+                        <div>
+                            <label class="block text-sm font-medium text-primary mb-1">Votre prénom</label>
+                            <input type="text" placeholder="Ex: Marie"
+                                class="form-input w-full px-4 py-3 border border-secondary rounded-md focus:border-primary transition-colors"
+                                required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-primary mb-1">Votre email</label>
+                            <input type="email" placeholder="Ex: marie@exemple.com"
+                                class="form-input w-full px-4 py-3 border border-secondary rounded-md focus:border-primary transition-colors"
+                                required>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-primary text-white py-3 px-4 rounded-md font-semibold hover:bg-accent transition-colors pulse-animation">
+                            Rejoindre la masterclass gratuitement <i class="ml-2 fas fa-arrow-right"></i>
+                        </button>
+                    </form>
+
+                    <div class="mt-6 flex items-center justify-center text-accent">
+                        <i class="fas fa-lock mr-2"></i>
+                        <span class="text-sm">Vos informations sont 100% sécurisées</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4 section-title">Questions Fréquentes</h2>
+            <p class="text-lg text-accent text-center max-w-2xl mx-auto mb-12">Toutes les réponses aux questions que
+                vous pourriez vous poser</p>
+
+            <div class="max-w-3xl mx-auto">
+                <div class="faq-item py-5">
+                    <div class="faq-question flex justify-between items-center cursor-pointer">
+                        <h3 class="text-lg font-semibold text-primary">La masterclass est-elle vraiment gratuite ?</h3>
+                        <span class="faq-icon text-primary transition-transform"><i
+                                class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer mt-2">
+                        <p class="text-accent">Absolument. La masterclass est 100% gratuite. Nous voulons vous montrer
+                            la valeur que nous pouvons vous apporter avant de vous proposer éventuellement un programme
+                            plus avancé.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item py-5">
+                    <div class="faq-question flex justify-between items-center cursor-pointer">
+                        <h3 class="text-lg font-semibold text-primary">Faut-il déjà avoir un business pour participer ?
+                        </h3>
+                        <span class="faq-icon text-primary transition-transform"><i
+                                class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer mt-2">
+                        <p class="text-accent">Pas du tout. La masterclass est conçue pour les débutants complets comme
+                            pour ceux qui ont déjà un business mais veulent passer au niveau supérieur.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item py-5">
+                    <div class="faq-question flex justify-between items-center cursor-pointer">
+                        <h3 class="text-lg font-semibold text-primary">Y aura-t-il un replay si je ne peux pas être
+                            présent ?</h3>
+                        <span class="faq-icon text-primary transition-transform"><i
+                                class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer mt-2">
+                        <p class="text-accent">Oui, un replay sera disponible pendant 48 heures pour tous les inscrits.
+                            Cependant, nous vous recommandons fortement d'assister en direct pour pouvoir poser vos
+                            questions.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item py-5">
+                    <div class="faq-question flex justify-between items-center cursor-pointer">
+                        <h3 class="text-lg font-semibold text-primary">De quoi ai-je besoin pour participer ?</h3>
+                        <span class="faq-icon text-primary transition-transform"><i
+                                class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer mt-2">
+                        <p class="text-accent">Seulement une connexion internet et de quoi prendre des notes. La
+                            masterclass se déroule sur Zoom, mais vous pouvez également suivre via votre navigateur sans
+                            installation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <span class="text-2xl font-bold">EliteMasterclass</span>
+                    <p class="mt-2 text-sm opacity-80">Transformez votre passion en business rentable</p>
+                </div>
+
+                <div class="flex space-x-4">
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="border-t border-white border-opacity-20 mt-8 pt-8 text-sm text-center opacity-80">
+                <p>© 2025 EliteMasterclass. Tous droits réservés. | <a href="#" class="hover:underline">Mentions
+                        légales</a> | <a href="#" class="hover:underline">Politique de confidentialité</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Countdown Timer - CORRIGÉ pour 15 septembre 2025
+        function updateCountdown() {
+            // Définir la date de la masterclass (15 septembre 2025 à 19h00)
+            const masterclassDate = new Date('2025-09-15T19:00:00');
+            const now = new Date();
+            const distance = masterclassDate - now;
+
+            // Calculer jours, heures, minutes, secondes
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Mettre à jour les éléments du compte à rebours
+            document.getElementById('days').innerHTML = days.toString().padStart(2, '0');
+            document.getElementById('hours').innerHTML = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').innerHTML = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').innerHTML = seconds.toString().padStart(2, '0');
+
+            document.getElementById('cta-days').innerHTML = days.toString().padStart(2, '0');
+            document.getElementById('cta-hours').innerHTML = hours.toString().padStart(2, '0');
+            document.getElementById('cta-minutes').innerHTML = minutes.toString().padStart(2, '0');
+            document.getElementById('cta-seconds').innerHTML = seconds.toString().padStart(2, '0');
+
+            // Si le compte à rebours est terminé
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.querySelectorAll('.countdown-box').forEach(box => {
+                    box.innerHTML = '<span class="text-xl font-bold text-primary">TERMINÉ</span>';
+                });
+            }
+        }
+
+        // Démarrer le compte à rebours et le mettre à jour toutes les secondes
+        const countdownFunction = setInterval(updateCountdown, 1000);
+        updateCountdown(); // Appel initial
+
+        // FAQ Toggle - CORRIGÉ
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('faq-active');
+            });
+        });
+
+        // Form Submission
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Animation de confirmation
+                const button = this.querySelector('button[type="submit"]');
+                const originalText = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-check"></i> Inscription confirmée!';
+                button.classList.remove('bg-primary');
+                button.classList.add('bg-green-600');
+
+                // Réinitialiser après 3 secondes
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.classList.remove('bg-green-600');
+                    button.classList.add('bg-primary');
+                    this.reset();
+                }, 3000);
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Animation au défilement
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.benefit-card, .testimonial-card, .countdown-box');
+
+            elements.forEach(element => {
+                const position = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+
+                if (position < screenPosition) {
+                    element.style.opacity = 1;
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // Initialiser les éléments animés
+        document.querySelectorAll('.benefit-card, .testimonial-card, .countdown-box').forEach(element => {
+            element.style.opacity = 0;
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        });
+
+        // Écouter l'événement de défilement
+        window.addEventListener('scroll', animateOnScroll);
+        // Initialiser au chargement
+        window.addEventListener('load', animateOnScroll);
+
+        // Dans index.html, remplacez la partie form submission
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+
+                // Récupérer les données du formulaire
+                const firstName = this.querySelector('input[type="text"]').value;
+                const email = this.querySelector('input[type="email"]').value;
+
+                const button = this.querySelector('button[type="submit"]');
+                const originalText = button.innerHTML;
+
+                try {
+                    button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Inscription...';
+                    button.disabled = true;
+
+                    // Envoyer à l'API
+                    const response = await fetch('/api/subscribers', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ firstName, email })
+                    });
+
+                    const result = await response.json();
+
+                    if (response.ok) {
+                        button.innerHTML = '<i class="fas fa-check"></i> Inscription confirmée!';
+                        button.classList.remove('bg-primary');
+                        button.classList.add('bg-green-600');
+                        this.reset();
+
+                        setTimeout(() => {
+                            button.innerHTML = originalText;
+                            button.classList.remove('bg-green-600');
+                            button.classList.add('bg-primary');
+                            button.disabled = false;
+                        }, 3000);
+                    } else {
+                        throw new Error(result.error);
+                    }
+                } catch (error) {
+                    button.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Erreur';
+                    button.classList.remove('bg-primary');
+                    button.classList.add('bg-red-600');
+
+                    setTimeout(() => {
+                        button.innerHTML = originalText;
+                        button.classList.remove('bg-red-600');
+                        button.classList.add('bg-primary');
+                        button.disabled = false;
+                    }, 3000);
+
+                    alert('Erreur: ' + error.message);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
